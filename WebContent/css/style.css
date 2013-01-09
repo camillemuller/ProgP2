@@ -15,7 +15,11 @@ padding-right:100px;
 padding-left:50px;
 }
 
+.erreur{
+color : red;
+}
 body{
 background-image:url(../images/font.jpg);
 background-position:center center;
 }
+

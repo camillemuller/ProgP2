@@ -46,41 +46,37 @@ public class Connexion extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		try {
-			Client uncli = 	this.sonClientDAO.recupererClientsParticuliers("muller", "camille");
-			System.out.print(uncli.getAdresse());
-		} catch (ClientInexistantException e) {
-			// TODO Auto-generated catch block
-		System.out.print("jaybugay");
-			e.printStackTrace();
-			
-		}
-		
-		
-		/*		String nom = request.getParameter("nom");
-				String prenom = request.getParameter("prenom");
-				      
-				try
-				{
-					
-				
-				if(!nom.isEmpty() && !prenom.isEmpty()){
-					Client uncli = 	this.sonClientDAO.recupererClientsParticuliers(nom, prenom);
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
 
-				          
-				   request.getSession().setAttribute("user", uncli);
-				   request.getRequestDispatcher("content.jsp,;,  ").forward(request, response);
-				          
-				} else {
-				   response.sendRedirect("home.jsp");
-				}
-				}catch (ClientInexistantException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		*/
+         // Si l'un des champs est vide
+         if ("".equals(prenom) || "".equals(nom)) {
+               request.setAttribute("erreur", "Vous devez remplir les deux champs.");
+               // Redirection vers le formulaire form.jsp
+    		  request.getRequestDispatcher("index.jsp").forward(request, response); 
+         }
+
+         // Sinon
+         else {
+        		try {
+
+           			
+           			Client uncli = 	this.sonClientDAO.recupererClientsParticuliers(nom,prenom);
+           			// Debug
+           			System.out.print(uncli.getAdresse());
+           			
+           		} catch (ClientInexistantException e) {
+           			// TODO Auto-generated catch block
+                    request.setAttribute("erreur",e.getMessage());
+           			request.getRequestDispatcher("index.jsp").forward(request, response);
+           		}    
+         }
 		
-		//response.getOutputStrea
+		
+		
+		
+		
+	
 	
 	}
 

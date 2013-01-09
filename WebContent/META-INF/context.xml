@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
  
- <!-- Pour essayer sur la BDD en ligne Utiliser l'adresse  : 88.191.147.27 au lieu de localhost -->
+ <!-- Pour essayer sur la BDD en ligne Utiliser l'adresse  : 88.191.147.27 au lieu de 10.8.0.1 -->
+ <!-- Utilisateur de par default nom : muller prenom : camille -->
   
   <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000"
