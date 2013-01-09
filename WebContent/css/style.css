@@ -1,7 +1,7 @@
 
 h1{
 	color : blue;
-	align : center
+	align : center;
 }
 
 .cadre
@@ -18,8 +18,9 @@ padding-left:50px;
 .erreur{
 color : red;
 }
+
 body{
-background-image:url(../images/font.jpg);
+background-image:url("../images/fond.jpg");
 background-position:center center;
 }
 

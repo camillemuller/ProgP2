@@ -14,8 +14,8 @@
 
 <form action="Connexion" class="cadre" method="POST">
 <div class="form">
-<h1 align="center" >Ma banque</h1>
-<p>Veuillez vous identifier:</p> 
+<h1 style="text-align:center;" >Ma banque</h1><p>Veuillez vous identifier:</p> 
+
 Entrez votre prenom : <input type="text" name="prenom"/><br>
  
 Entrez votre nom :<input type="text" name="nom"/><br>
@@ -32,6 +32,5 @@ Entrez votre nom :<input type="text" name="nom"/><br>
 
 </div>
 </form>
-
 </body>
 </html>

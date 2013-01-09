@@ -13,7 +13,6 @@
 <A HREF="page.htm">Modifier vos informations personnelles</A>
 <A HREF="page.htm">Gérer vos comptes</A>`
 <A HREF="page.htm">Se déconnecter</A>
-<p> </p>
 </div>
-</body>
+</body>	
 </html>
