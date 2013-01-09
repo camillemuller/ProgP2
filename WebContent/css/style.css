@@ -20,7 +20,7 @@ color : red;
 }
 
 body{
-background-image:url("../images/fond.jpg");
+background-image:url(../images/fond.jpg);
 background-position:center center;
 }
 

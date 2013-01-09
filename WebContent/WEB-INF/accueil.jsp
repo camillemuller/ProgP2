@@ -9,10 +9,12 @@
 <body>
 <div class="cadre">
 <h1>Bienvenue</h1>
-<h2>bonjour<% %>. Que souhaitez-vous faire ?</h2>
-<A href="page.htm">Modifier vos informations personnelles</A>
-<A href="page.htm">Gérer vos comptes</A>
-<A href="page.htm">Se déconnecter</A>
+<h2>bonjour <%
+out.print(request.getAttribute("nom_client"));                
+%>. Que souhaitez-vous faire ?</h2><br/>
+<A href="page.htm">Modifier vos informations personnelles</A><br/>
+<A href="page.htm">Gérer vos comptes</A><br/>
+<A href="page.htm">Se déconnecter</A><br/>
 </div>
 </body>	
 </html>

@@ -59,8 +59,10 @@ public class Connexion extends HttpServlet {
 		else {
 			try {
 				Client uncli = 	this.sonClientDAO.recupererClientsParticuliers(nom,prenom);
+				request.setAttribute("nom_client", nom+" "+prenom);
 				// Debug
-				System.out.print(uncli.getAdresse());
+				request.getSession().setAttribute("client", uncli);
+				request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 			} catch (ClientInexistantException e) {
 				// TODO Auto-generated catch block
 				request.setAttribute("erreur",e.getMessage());
