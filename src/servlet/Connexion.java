@@ -16,7 +16,7 @@ import banque.model.entites.client.Client;
 /**
  * Servlet implementation class Connexion
  */
-@WebServlet("/Connexion")
+@WebServlet("/Accueil")
 public class Connexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -59,7 +59,9 @@ public class Connexion extends HttpServlet {
 		else {
 			try {
 				Client uncli = 	this.sonClientDAO.recupererClientsParticuliers(nom,prenom);
-				request.setAttribute("nom_client", nom+" "+prenom);
+				request.setAttribute("nom_client", nom);
+				request.setAttribute("prenom_client", prenom);
+
 				// Debug
 				request.getSession().setAttribute("client", uncli);
 				request.getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);

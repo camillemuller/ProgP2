@@ -12,7 +12,7 @@
 
 
 
-<form action="Connexion" class="cadre" method="POST">
+<form action="Accueil" class="cadre" method="POST">
 <div class="form">
 <h1 style="text-align:center;" >Ma banque</h1><p>Veuillez vous identifier:</p> 
 
