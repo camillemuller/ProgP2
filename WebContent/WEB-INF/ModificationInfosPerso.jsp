@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Site de ma banque</title>
 </head>
 <body>
-
+<div class="cadre">
+<h1>Bienvenue</h1>
+<h2>Nom : <%out.print(request.getAttribute("nom_client"));%></h2>
+<br/>
+<h2>Prenom : <% out.print(request.getAttribute("nom_client"));%></h2>
+<br/>
+</div>
 </body>
 </html>
