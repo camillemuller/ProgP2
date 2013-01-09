@@ -10,9 +10,9 @@
 <div class="cadre">
 <h1>Bienvenue</h1>
 <h2>bonjour<% %>. Que souhaitez-vous faire ?</h2>
-<A HREF="page.htm">Modifier vos informations personnelles</A>
-<A HREF="page.htm">Gérer vos comptes</A>`
-<A HREF="page.htm">Se déconnecter</A>
+<A href="page.htm">Modifier vos informations personnelles</A>
+<A href="page.htm">Gérer vos comptes</A>
+<A href="page.htm">Se déconnecter</A>
 </div>
 </body>	
 </html>
