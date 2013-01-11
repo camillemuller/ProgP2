@@ -9,13 +9,18 @@
 </head>
 <body>
 <div class="cadre">
-<h1>Bienvenue</h1>
-<h2>bonjour <%
-out.print(request.getAttribute("nom_client")+" "); out.print(request.getAttribute("prenom_client"));                
-%>. Que souhaitez-vous faire ?</h2><br/>
-<a href="ModificationInfosPerso">Modifier vos informations personnelles</a><br/>
-<a href="GererComptes">Gérer vos comptes</a><br/>
-<a href="Deconnexion">Déconnexion</a>
+<h1>Liste de vos comptes</h1>
+<table border="1">
+<tr>
+<th>Numéro</th>
+<th>Débit</th>
+<th>Crédit</th>
+</tr>
+<%
+out.print(request.getAttribute("tableau"));         
+%>
+</table>
+<A href="Accueil">Retour sur la page d'acceuil</A><br/>
 </div>
 </body>	
 </html>

@@ -36,7 +36,17 @@ public class Connexion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		try
+		{
+		Client unCli = (Client)	request.getSession().getAttribute("client");
+		request.setAttribute("nom_client", unCli.getIdentite().getNom());
+		request.setAttribute("prenom_client", unCli.getIdentite().getPrenom());
+		request.getRequestDispatcher("/WEB-INF/accueil.jsp").include(request, response);	
+		}catch(NullPointerException e)
+		{
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
 
 	}
 
@@ -61,6 +71,7 @@ public class Connexion extends HttpServlet {
 				Client uncli = 	this.sonClientDAO.recupererClientsParticuliers(nom,prenom);
 				request.setAttribute("nom_client", nom);
 				request.setAttribute("prenom_client", prenom);
+				request.setAttribute("adresse", uncli.getAdresse());
 
 				// Debug
 				request.getSession().setAttribute("client", uncli);

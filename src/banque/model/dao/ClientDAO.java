@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import banque.exceptions.ClientInexistantException;
 import banque.model.entites.client.Client;
@@ -68,9 +67,8 @@ public class ClientDAO extends DAO {
 
 	}
 	
-//TODO	IL FAUT REVOIR CETTE FONCTION 
 	/**
-	 * Permet de rajouter un client dans la BDD
+	 * Permer de mettre a jour un clinet
 	 * @param unClient
 	 */
 	public void sauvegarder(Client unClient)
@@ -79,19 +77,14 @@ public class ClientDAO extends DAO {
 			try {
 				con = this.getConnection();
 				
-				Statement stp = con.createStatement();
-				ResultSet rs = stp.executeQuery("SELECT ID_PARTICULIER, NOM, PRENOM, ADRESSE FROM PARTICULIER");
-				rs.last();
 				
-				
-				PreparedStatement st = con.prepareStatement("insert into PARTICULIER(ID_PARTICULIER, NOM, PRENOM, ADRESSE) values(?,?,?,?)");
+				PreparedStatement st = con.prepareStatement("update PARTICULIER set adresse = ?  where nom = ? and prenom = ? ");
 				
 				// On mets en forme la requete
-				st.setInt(1, rs.getRow()+1);
+				st.setString(1, unClient.getAdresse());
 				st.setString(2, unClient.getIdentite().getNom());
 				st.setString(3, unClient.getIdentite().getPrenom());
-				st.setString(4, unClient.getAdresse());
-				//On rajoute le client
+				// exec de la requete
 				st.executeUpdate();
 				
 				st.close();

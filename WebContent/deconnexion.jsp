@@ -5,17 +5,15 @@
 <head>
 <link rel="stylesheet" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="refresh" content="5 ; url=index.jsp">
 <title>Site de ma banque</title>
 </head>
 <body>
 <div class="cadre">
-<h1>Bienvenue</h1>
-<h2>bonjour <%
+<h1>Déconnexion réussie</h1>
+<h2>Au revoir <%
 out.print(request.getAttribute("nom_client")+" "); out.print(request.getAttribute("prenom_client"));                
-%>. Que souhaitez-vous faire ?</h2><br/>
-<a href="ModificationInfosPerso">Modifier vos informations personnelles</a><br/>
-<a href="GererComptes">Gérer vos comptes</a><br/>
-<a href="Deconnexion">Déconnexion</a>
+%> .</h2><br/>
 </div>
 </body>	
 </html>
