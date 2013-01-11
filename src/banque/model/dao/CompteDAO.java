@@ -35,6 +35,7 @@ public class CompteDAO extends DAO {
 			Connection con = this.getConnection();
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("SELECT id_compte,numero,solde,type,decouvert from COMPTE where id_particulier="+unClient.getId());			
+
 			while (rs.next()) {
 				if(rs.getString("type")=="CHEQUE")
 				{
@@ -57,6 +58,7 @@ public class CompteDAO extends DAO {
 			System.exit(1);
 		}catch(CompteDejaExistantException e)
 		{
+			//Debug
 			System.out.println(e.getMessage());
 		}
 	}

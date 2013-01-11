@@ -11,13 +11,15 @@
 <div class="cadre">
 <h1>Liste de vos comptes</h1>
 <table border="1">
+<thead>
 <tr>
 <th>Numéro</th>
 <th>Débit</th>
 <th>Crédit</th>
 </tr>
+</thead>
 <%
-out.print(request.getAttribute("tableau"));         
+out.print(request.getAttribute("tableau"));              
 %>
 </table>
 <A href="Accueil">Retour sur la page d'acceuil</A><br/>

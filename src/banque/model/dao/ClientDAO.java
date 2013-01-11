@@ -51,6 +51,7 @@ public class ClientDAO extends DAO {
 			{
 				
 				Particulier leClient = new Particulier(rs.getString(2),rs.getString(3),rs.getString(4));
+				leClient.setId(Integer.parseInt(rs.getString(1)));
 				st.close();
 				rs.close();
 				con.close();

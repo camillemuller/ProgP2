@@ -7,11 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import banque.exceptions.CompteDejaExistantException;
 import banque.model.dao.CompteDAO;
 import banque.model.entites.client.Client;
 import banque.model.entites.compte.Compte;
-import banque.model.entites.compte.CompteCheque;
 
 /**
  * Servlet implementation class GererComptes
@@ -37,19 +35,12 @@ public class GererComptes extends HttpServlet {
 		String uneGdeT= "";
 		Client unCli = (Client)	request.getSession().getAttribute("client");
 		sonCompteDAO.recupererCompte(unCli);
-		try {
-			unCli.ajouterCompte(new CompteCheque(3, "TEST", 100, 0));
-			unCli.ajouterCompte(new CompteCheque(4, "TEST2", -100, -220));
-		} catch (CompteDejaExistantException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		for(Compte unCompte :  unCli.getComptes())
 		{
 			uneGdeT+="<tr>";
 			
-			uneGdeT+="<th>"+unCompte.getNumeroCompte()+"</th>";
+			uneGdeT+="<th>"+"<a href=\"AfficherCompte?numero="+unCompte.getNumeroCompte()+"\">"+unCompte.getNumeroCompte()+"</a>"+"</th>";
 			
 			if(unCompte.getSolde()>=0) // Si il est positif on le mets sur la 3eme colonnes.
 			{
