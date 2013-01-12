@@ -9,11 +9,14 @@
 </head>
 <body>
 <div class="cadre">
-<h1>Liste de vos comptes</h1>
+<h1>Compte numéro <%out.print(request.getParameter("numero")); %></h1>
+<p>Le solde de votre compte est de <%out.print(request.getAttribute("euros"));%>euros.</p>
+<p>Voici la liste des opérations effectuées sur votre compte :</p>
 <table border="1">
 <thead>
 <tr>
-<th>Numéro</th>
+<th>Date</th>
+<th>Intitulé</th>
 <th>Débit</th>
 <th>Crédit</th>
 </tr>
@@ -22,7 +25,7 @@
 out.print(request.getAttribute("tableau"));              
 %>
 </table>
-<A href="EffectuerVirement">Effectuer un virement entre vos comptes</A><br/>
+<A href="GererComptes">Retour sur la liste de compte</A><br/>
 <A href="Accueil">Retour sur la page d'acceuil</A><br/>
 </div>
 </body>	

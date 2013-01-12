@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 import banque.exceptions.EcritureRefuseeException;
 import banque.model.entites.compte.Compte;
 
@@ -38,6 +37,8 @@ public class EcritureDAO extends DAO {
 		Connection con = this.getConnection();
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery("SELECT ID_ECRITURE,DATE_ECRITURE,LIBELLE,MONTANT,ID_COMPTE from ECRITURE where ID_COMPTE="+unCompte.getId());			
+		
+		
 		while (rs.next()) {
 			
 			//public Ecriture(int id, java.util.Date date, String intitule, float montant)

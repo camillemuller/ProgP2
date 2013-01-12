@@ -5,25 +5,20 @@
 <head>
 <link rel="stylesheet" href="css/style.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="refresh" content="5 ; url=EffectuerVirement">
 <title>Site de ma banque</title>
 </head>
 <body>
 <div class="cadre">
-<h1>Liste de vos comptes</h1>
-<table border="1">
-<thead>
-<tr>
-<th>Numéro</th>
-<th>Débit</th>
-<th>Crédit</th>
-</tr>
-</thead>
-<%
-out.print(request.getAttribute("tableau"));              
-%>
-</table>
-<A href="EffectuerVirement">Effectuer un virement entre vos comptes</A><br/>
-<A href="Accueil">Retour sur la page d'acceuil</A><br/>
+<h1>Virement effectué avec succès</h1><br/>
+<p>
+Votre virement de <%request.getParameter("montant");;%>
+a bien été effectué depuis votre compte
+<%request.getParameter("Crediteur");;%>
+vers votre compte 
+<%request.getParameter("Débiteur");;%>
+.
+</p>
 </div>
 </body>	
 </html>
