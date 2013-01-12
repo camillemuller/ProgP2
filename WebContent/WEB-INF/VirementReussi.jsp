@@ -12,11 +12,11 @@
 <div class="cadre">
 <h1>Virement effectué avec succès</h1><br/>
 <p>
-Votre virement de <%request.getParameter("montant");;%>
+Votre virement de <%out.print(request.getAttribute("Montant"));%>
 a bien été effectué depuis votre compte
-<%request.getParameter("Crediteur");;%>
+<%out.print(request.getAttribute("Crediteur"));%>
 vers votre compte 
-<%request.getParameter("Débiteur");;%>
+<%out.print(request.getAttribute("Debiteur"));%>
 .
 </p>
 </div>

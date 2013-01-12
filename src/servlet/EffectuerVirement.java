@@ -88,9 +88,15 @@ public class EffectuerVirement extends HttpServlet {
 		{
 			try{
 				unCli.effectuerVirement(unCli.getCompte(unDeb),unCli.getCompte(unCred),new Float(unMontant),unLib,new Date());
-				this.sonEcriDAO.sauvegarder(new Ecriture(new Date(), unLib,new Float(unMontant)), unCli.getCompte(unDeb));
-				this.sonEcriDAO.sauvegarder(new Ecriture(new Date(), unLib,new Float(unMontant)), unCli.getCompte(unCred));
+				this.sonEcriDAO.sauvegarder(new Ecriture(new Date(), unLib,-(new Float(unMontant))), unCli.getCompte(unDeb));
+				this.sonEcriDAO.sauvegarder(new Ecriture(new Date(), unLib,(new Float(unMontant))), unCli.getCompte(unCred));
 
+				// affichage des resultats 
+				
+				request.setAttribute("Montant", unMontant);
+				request.setAttribute("Debiteur", unDeb);
+				request.setAttribute("Crediteur", unCred);
+				
 				request.getRequestDispatcher("/WEB-INF/VirementReussi.jsp").forward(request, response);
 			}catch(EcritureRefuseeException e)
 			{
@@ -134,7 +140,6 @@ public class EffectuerVirement extends HttpServlet {
 			// Pour la recreation du tableau...
 			if(unDeb!=null)
 			{
-			System.out.print("unDeb="+unDeb+"Compte en test="+unCompte.getNumeroCompte()+"\n");
 			if(unDeb.equals(unCompte.getNumeroCompte()))
 			uneGdeT+=" checked";
 			

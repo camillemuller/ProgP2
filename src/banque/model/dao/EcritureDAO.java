@@ -78,7 +78,7 @@ public class EcritureDAO extends DAO {
 			rs.last();
 			
 			PreparedStatement stprmd = 
-			con.prepareStatement("insert into ecriture(ID_ECRITURE,DATE_LIBELLE,LIBELLE,MONTANT,ID_COMPTE)" +
+			con.prepareStatement("insert into ECRITURE(ID_ECRITURE,DATE_ECRITURE,LIBELLE,MONTANT,ID_COMPTE)" +
 								 "values(?,?,?,?,?)");
 			
 			stprmd.setInt(1, rs.getRow()+1 );
@@ -94,7 +94,7 @@ public class EcritureDAO extends DAO {
 			
 		}catch(SQLException e)
 		{
-		
+		e.printStackTrace();
 		}
 
 	}
