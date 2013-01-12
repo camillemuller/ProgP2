@@ -17,7 +17,9 @@ import banque.model.entites.compte.Compte;
 import banque.model.entites.compte.Ecriture;
 
 /**
- * Servlet implementation class EffectuerVirement
+ * Permet d'effectuer un virement entre deux comptes.
+ * @author camillemuller & Raillet Sebastien
+ *
  */
 @WebServlet("/EffectuerVirement")
 public class EffectuerVirement extends HttpServlet {

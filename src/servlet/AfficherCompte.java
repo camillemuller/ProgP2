@@ -13,7 +13,9 @@ import banque.model.entites.compte.Compte;
 import banque.model.entites.compte.Ecriture;
 
 /**
- * Servlet implementation class AfficherCompte
+ * 
+ * @author camillemuller & Raillet Sebastien 
+ * Permet d'afficher un compte de l'utilisateur et ses ecritures associées.
  */
 @WebServlet("/AfficherCompte")
 public class AfficherCompte extends HttpServlet {

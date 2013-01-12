@@ -13,7 +13,7 @@ import banque.model.entites.compte.Ecriture;
 
 /**
  * Permet de gérer les opérations des clients
- * @author camillemuller
+ * @author camillemuller & Raillet sebastien
  *
  */
 public class EcritureDAO extends DAO {

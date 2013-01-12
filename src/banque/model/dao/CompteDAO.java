@@ -14,7 +14,7 @@ import banque.model.entites.compte.CompteEpargne;
 
 /**
  * Permet de gérer les comptes avec la BDD
- * @author camillemuller
+ * @author camillemuller & Raillet sebastien
  *
  */
 public class CompteDAO extends DAO {

@@ -13,7 +13,9 @@ import banque.model.entites.client.Client;
 import banque.model.entites.compte.Compte;
 
 /**
- * Servlet implementation class GererComptes
+ * Permet d'afficher les comptes et leur solde associées.
+ * @author camillemuller & Raillet Sebastien.
+ *
  */
 @WebServlet("/GererComptes")
 public class GererComptes extends HttpServlet {

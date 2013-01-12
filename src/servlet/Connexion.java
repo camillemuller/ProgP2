@@ -14,7 +14,9 @@ import banque.model.dao.ClientDAO;
 import banque.model.entites.client.Client;
 
 /**
- * Servlet implementation class Connexion
+ * Permet de connecter l'utilisateur et de le renvoyer sur Accueil.
+ * @author camillemuller & Raillet Sebastien
+ *
  */
 @WebServlet("/Accueil")
 public class Connexion extends HttpServlet {

@@ -11,7 +11,9 @@ import banque.model.dao.ClientDAO;
 import banque.model.entites.client.Client;
 
 /**
- * Servlet implementation class ModificationInfosPerso
+ * Permet a l'utilisateur de changer son adresse.
+ * @author camillemuller & Raillet sebastien.
+ *
  */
 @WebServlet("/ModificationInfosPerso")
 public class ModificationInfosPerso extends HttpServlet {

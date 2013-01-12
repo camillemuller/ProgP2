@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import banque.model.entites.client.Client;
 
-/**
- * Servlet implementation class Deconnexion
+/** 
+ * Destruction de la session.
+ * @author camillemuller & Raillet sebastien.
+ *
  */
 @WebServlet("/Deconnexion")
 public class Deconnexion extends HttpServlet {
