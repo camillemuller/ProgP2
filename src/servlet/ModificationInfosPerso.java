@@ -26,15 +26,13 @@ public class ModificationInfosPerso extends HttpServlet {
     public ModificationInfosPerso() {
         super();
         this.sonClientDAO = new ClientDAO();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+		//Inialisation de la page.
 		Client unCli = (Client)	request.getSession().getAttribute("client");
 		request.setAttribute("nom_client", unCli.getIdentite().getNom());
 		request.setAttribute("prenom_client", unCli.getIdentite().getPrenom());
@@ -46,7 +44,6 @@ public class ModificationInfosPerso extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
 		Client unCli = (Client)	request.getSession().getAttribute("client");
 
@@ -56,7 +53,6 @@ public class ModificationInfosPerso extends HttpServlet {
 		//On verfie que l'adresse n'est plus la meme.
 		if(!unCli.getAdresse().equals(uneAdr) )
 				{
-			System.out.print(uneAdr);
 				unCli.setAdresse(uneAdr);
 				this.sonClientDAO.sauvegarder(unCli);
 		//MAJ

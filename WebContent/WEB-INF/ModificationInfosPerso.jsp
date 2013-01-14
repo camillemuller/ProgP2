@@ -15,7 +15,7 @@
 <h2>Prenom : <% out.print(request.getAttribute("prenom_client"));%></h2>
 <br/>
 Entrez votre nom :<input type="text" name="adresse" value="<%out.print(request.getAttribute("adresse"));%>" /> <br>
-<button name="btnOK" value="OK" type="submit">Modification</button>
+<button name="btnOK" value="OK" type="submit">Modifier</button>
 <A href="Accueil">Retour sur la page d'acceuil</A><br/>
 </form>
 

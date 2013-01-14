@@ -67,7 +67,7 @@ Libellé :  <input type="text" name="libelle" value="<%if(unLib!=null)out.print(u
 
 <br/>
 (Le libellé sera automatiquement précédé par "VIR" pour le compte débité)<br/>
-<button name="btnOK" value="OK" type="submit">Se connecter</button>
+<button name="btnOK" value="OK" type="submit">Valider</button>
 </form>
 <A href="GererComptes">Retour sur la liste de compte</A><br/>
 <A href="Accueil">Retour sur la page d'acceuil</A><br/>

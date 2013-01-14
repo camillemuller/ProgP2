@@ -44,13 +44,10 @@ public class GererComptes extends HttpServlet {
 
 		for(Compte unCompte :  unCli.getComptes())
 		{
-			// On charge les 残ritures sur le comptes
-			// On est obliger de contr冤er le chargement des 残ritures
-			// Si il n'y pas d'残riture cela veux dire que l'残riture initiale
-			// n'est pas charger donc que le compte n'est pas charger avec ses ecritures.
-			if(unCompte.getEcritures().size()==0) 
+			// Premiere execution du dao
+			if(unCompte.getEcritures().size()==0)
 			sonEcriDAO.chargerEcriture(unCompte);
-			
+
 			
 			uneGdeT+="<tr>";
 			uneGdeT+="<th>"+"<a href=\"AfficherCompte?numero="+unCompte.getNumeroCompte()+"\">"+unCompte.getNumeroCompte()+"</a>"+"</th>";

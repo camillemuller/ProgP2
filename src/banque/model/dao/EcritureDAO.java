@@ -42,7 +42,12 @@ public class EcritureDAO extends DAO {
 		while (rs.next()) {
 			
 			//public Ecriture(int id, java.util.Date date, String intitule, float montant)
-			unCompte.addEcriture(new Ecriture(rs.getInt("ID_ECRITURE"),rs.getDate("DATE_ECRITURE"),rs.getString("LIBELLE"),rs.getFloat("MONTANT")));
+			
+			// Création de l'écriture
+			Ecriture uneEcriture = new Ecriture(rs.getInt("ID_ECRITURE"),rs.getDate("DATE_ECRITURE"),rs.getString("LIBELLE"),rs.getFloat("MONTANT"));
+			
+			// On va vérifier que l'écriture n'est pas déjà dans le compte 
+			unCompte.addEcriture(uneEcriture);
 		}
 		rs.close();
 		st.close();
